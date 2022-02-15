@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601E37D227B52639006D67A1 /* GitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E37D127B52639006D67A1 /* GitResponse.swift */; };
 		605D3C9527B3100D00AAE3A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D3C9427B3100D00AAE3A1 /* AppDelegate.swift */; };
 		605D3C9727B3100D00AAE3A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D3C9627B3100D00AAE3A1 /* SceneDelegate.swift */; };
 		605D3C9927B3100D00AAE3A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D3C9827B3100D00AAE3A1 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		601E37D127B52639006D67A1 /* GitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitResponse.swift; sourceTree = "<group>"; };
 		605D3C9127B3100D00AAE3A1 /* GitHub Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		605D3C9427B3100D00AAE3A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		605D3C9627B3100D00AAE3A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		601E37D027B5261C006D67A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				601E37D127B52639006D67A1 /* GitResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		605D3C8827B3100D00AAE3A1 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		605D3C9327B3100D00AAE3A1 /* GitHub Search */ = {
 			isa = PBXGroup;
 			children = (
+				601E37D027B5261C006D67A1 /* Model */,
 				605D3C9427B3100D00AAE3A1 /* AppDelegate.swift */,
 				605D3C9627B3100D00AAE3A1 /* SceneDelegate.swift */,
 				605D3C9827B3100D00AAE3A1 /* ViewController.swift */,
@@ -140,6 +151,7 @@
 				605D3C9927B3100D00AAE3A1 /* ViewController.swift in Sources */,
 				605D3C9527B3100D00AAE3A1 /* AppDelegate.swift in Sources */,
 				605D3C9727B3100D00AAE3A1 /* SceneDelegate.swift in Sources */,
+				601E37D227B52639006D67A1 /* GitResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
