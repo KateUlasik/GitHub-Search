@@ -11,11 +11,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputTextView: UITextView!
     
-  private var response: GitResponse?
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+  private var items: [GitResponseItems] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let collectionViewFlowLayout = UICollectionViewFlowLayout()
+          collectionView.collectionViewLayout = collectionViewFlowLayout
+          collectionViewFlowLayout.minimumLineSpacing = 50
+          
+          collectionView.layer.cornerRadius = 0
+          collectionView.layer.borderWidth = 1
+          
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
+          collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 50, height: 160)
+          
+          collectionView.collectionViewLayout = collectionViewFlowLayout
+          
+        collectionView.register(UINib(nibName: "GitItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GitItemCollectionViewCell")
+        
     }
    
     @IBAction func makeRequestAction(_ sender: Any) {
@@ -24,7 +43,11 @@ class ViewController: UIViewController {
         if let searchText = inputTextField.text, searchText.isEmpty == false {
             makeRequest(searchText: searchText) { (rawtext, response) in
                 self.outputTextView.text = rawtext
-                self.response = response
+                self.items = (response?.items ?? [])
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
                 }
             } else {
             outputTextView.text = "Error: Search text is nil..."
@@ -61,3 +84,20 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GitItemCollectionViewCell", for: indexPath) as! GitItemCollectionViewCell
+    
+        let item = items[indexPath.row]
+        cell.configure(item: item)
+        
+        return cell
+    }
+    
+}

@@ -14,6 +14,8 @@
 		605D3C9C27B3100D00AAE3A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605D3C9A27B3100D00AAE3A1 /* Main.storyboard */; };
 		605D3C9E27B3100E00AAE3A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D3C9D27B3100E00AAE3A1 /* Assets.xcassets */; };
 		605D3CA127B3100E00AAE3A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605D3C9F27B3100E00AAE3A1 /* LaunchScreen.storyboard */; };
+		607DDB1127BC3E5E004E274A /* GitItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607DDB0F27BC3E5E004E274A /* GitItemCollectionViewCell.swift */; };
+		607DDB1227BC3E5E004E274A /* GitItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607DDB1027BC3E5E004E274A /* GitItemCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		605D3C9D27B3100E00AAE3A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		605D3CA027B3100E00AAE3A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		605D3CA227B3100E00AAE3A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607DDB0F27BC3E5E004E274A /* GitItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		607DDB1027BC3E5E004E274A /* GitItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitItemCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,16 +70,26 @@
 		605D3C9327B3100D00AAE3A1 /* GitHub Search */ = {
 			isa = PBXGroup;
 			children = (
+				607DDB0E27BC3E0C004E274A /* UI */,
 				601E37D027B5261C006D67A1 /* Model */,
 				605D3C9427B3100D00AAE3A1 /* AppDelegate.swift */,
 				605D3C9627B3100D00AAE3A1 /* SceneDelegate.swift */,
-				605D3C9827B3100D00AAE3A1 /* ViewController.swift */,
-				605D3C9A27B3100D00AAE3A1 /* Main.storyboard */,
 				605D3C9D27B3100E00AAE3A1 /* Assets.xcassets */,
 				605D3C9F27B3100E00AAE3A1 /* LaunchScreen.storyboard */,
 				605D3CA227B3100E00AAE3A1 /* Info.plist */,
 			);
 			path = "GitHub Search";
+			sourceTree = "<group>";
+		};
+		607DDB0E27BC3E0C004E274A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				605D3C9827B3100D00AAE3A1 /* ViewController.swift */,
+				605D3C9A27B3100D00AAE3A1 /* Main.storyboard */,
+				607DDB0F27BC3E5E004E274A /* GitItemCollectionViewCell.swift */,
+				607DDB1027BC3E5E004E274A /* GitItemCollectionViewCell.xib */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				607DDB1227BC3E5E004E274A /* GitItemCollectionViewCell.xib in Resources */,
 				605D3CA127B3100E00AAE3A1 /* LaunchScreen.storyboard in Resources */,
 				605D3C9E27B3100E00AAE3A1 /* Assets.xcassets in Resources */,
 				605D3C9C27B3100D00AAE3A1 /* Main.storyboard in Resources */,
@@ -150,6 +165,7 @@
 			files = (
 				605D3C9927B3100D00AAE3A1 /* ViewController.swift in Sources */,
 				605D3C9527B3100D00AAE3A1 /* AppDelegate.swift in Sources */,
+				607DDB1127BC3E5E004E274A /* GitItemCollectionViewCell.swift in Sources */,
 				605D3C9727B3100D00AAE3A1 /* SceneDelegate.swift in Sources */,
 				601E37D227B52639006D67A1 /* GitResponse.swift in Sources */,
 			);
