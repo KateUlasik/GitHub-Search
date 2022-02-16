@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-  private var items: [GitResponseItems] = []
+    @IBOutlet weak var debugPanelHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var showPanelButton: UIButton!
+    
+    @IBOutlet weak var tokenTextField: UITextField!
+    
+    private var items: [GitResponseItems] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +41,32 @@ class ViewController: UIViewController {
           
         collectionView.register(UINib(nibName: "GitItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GitItemCollectionViewCell")
         
+        self.showPanelButton.setTitle("Hide debug panel", for: .normal)
     }
-   
+    
+    @IBAction func showDebugAction(_ sender: Any) {
+        if self.outputTextView.isHidden {
+            self.outputTextView.isHidden = false
+            
+            UIView.animate(withDuration: 1) {
+                self.debugPanelHeight.constant = 230
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.showPanelButton.setTitle("Hide debug panel", for: .normal)
+        }
+            } else {
+                UIView.animate(withDuration: 1) {
+                    self.debugPanelHeight.constant = 0
+                    self.view.layoutIfNeeded()
+                } completion: { _ in
+                    self.outputTextView.isHidden = true
+                    self.showPanelButton.setTitle("Show debug panel", for: .normal)
+            }
+        }
+    }
+    
+    
+    
     @IBAction func makeRequestAction(_ sender: Any) {
         self.outputTextView.text = "Loading..."
         
@@ -58,7 +88,10 @@ class ViewController: UIViewController {
         let url = URL(string: "https://api.github.com/search/code?q='\(searchText)'")!
         
         var request = URLRequest(url: url)
-        request.setValue("token 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", forHTTPHeaderField: "Authorization")
+        
+        let token = self.tokenTextField.text ?? ""
+        
+        request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
         
         request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
         

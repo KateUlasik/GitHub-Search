@@ -45,17 +45,17 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="You will see here some info after press the button &quot;Make request&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h1y-tG-cat">
-                                <rect key="frame" x="20" y="243.5" width="374" height="106"/>
+                                <rect key="frame" x="20" y="540" width="374" height="230"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="106" id="hb7-8N-BGD"/>
+                                    <constraint firstAttribute="height" constant="230" id="yvg-YL-kk2"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YoX-Xw-lvU">
-                                <rect key="frame" x="20" y="368" width="374" height="499"/>
+                                <rect key="frame" x="20" y="243" width="374" height="246"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y0S-VO-kFx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -65,27 +65,57 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afI-pQ-KWH">
+                                <rect key="frame" x="20" y="497" width="106" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Show debug">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDebugAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0C-OV-EnG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="place your token here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQY-4U-o2y">
+                                <rect key="frame" x="20" y="788" width="374" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="Uy4-Bw-rVY"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.72616947585301339" green="0.86140860708993028" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.70326375240755401" green="0.72653623614089935" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h1y-tG-cat" secondAttribute="trailing" constant="20" id="5Rn-n9-B7X"/>
                             <constraint firstItem="aiQ-4N-uKF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7wn-BQ-IzO"/>
-                            <constraint firstItem="YoX-Xw-lvU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="5" id="A9p-aF-n0d"/>
-                            <constraint firstItem="h1y-tG-cat" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gz7-JE-LS6"/>
-                            <constraint firstItem="YoX-Xw-lvU" firstAttribute="top" secondItem="h1y-tG-cat" secondAttribute="bottom" constant="18.5" id="buV-Zm-HZt"/>
-                            <constraint firstItem="YoX-Xw-lvU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="d5Z-r1-NVH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YoX-Xw-lvU" secondAttribute="trailing" constant="20" id="fEx-OR-1If"/>
+                            <constraint firstItem="afI-pQ-KWH" firstAttribute="top" secondItem="YoX-Xw-lvU" secondAttribute="bottom" constant="8" id="9Yf-9Z-l6H"/>
+                            <constraint firstItem="h1y-tG-cat" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BEp-kF-gk2"/>
+                            <constraint firstItem="h1y-tG-cat" firstAttribute="trailing" secondItem="YoX-Xw-lvU" secondAttribute="trailing" id="Dgw-Gf-N3U"/>
+                            <constraint firstItem="YoX-Xw-lvU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KPW-8T-xep"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="afI-pQ-KWH" secondAttribute="trailing" symbolic="YES" id="LjV-4W-il5"/>
+                            <constraint firstItem="hQY-4U-o2y" firstAttribute="leading" secondItem="h1y-tG-cat" secondAttribute="leading" id="Pd5-ht-4nP"/>
+                            <constraint firstItem="afI-pQ-KWH" firstAttribute="leading" secondItem="h1y-tG-cat" secondAttribute="leading" id="Ty5-hl-A4B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hQY-4U-o2y" secondAttribute="bottom" constant="15" id="WoM-9p-SOQ"/>
+                            <constraint firstItem="hQY-4U-o2y" firstAttribute="top" secondItem="h1y-tG-cat" secondAttribute="bottom" constant="18" id="Y6k-fT-SpJ"/>
+                            <constraint firstItem="YoX-Xw-lvU" firstAttribute="top" secondItem="aiQ-4N-uKF" secondAttribute="bottom" constant="21" id="Yyn-PL-mli"/>
+                            <constraint firstItem="h1y-tG-cat" firstAttribute="leading" secondItem="YoX-Xw-lvU" secondAttribute="leading" id="ZMG-eY-cy2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YoX-Xw-lvU" secondAttribute="trailing" constant="20" id="dzb-FV-Dev"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aiQ-4N-uKF" secondAttribute="trailing" constant="20" id="iVG-4T-azt"/>
-                            <constraint firstItem="h1y-tG-cat" firstAttribute="top" secondItem="aiQ-4N-uKF" secondAttribute="bottom" constant="21.5" id="rIb-Lk-vbe"/>
+                            <constraint firstItem="h1y-tG-cat" firstAttribute="top" secondItem="afI-pQ-KWH" secondAttribute="bottom" constant="8" id="kNw-LY-ILv"/>
                             <constraint firstItem="aiQ-4N-uKF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="tsd-CE-iCz"/>
+                            <constraint firstItem="hQY-4U-o2y" firstAttribute="trailing" secondItem="h1y-tG-cat" secondAttribute="trailing" id="vbh-oU-ieP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h1y-tG-cat" secondAttribute="trailing" constant="20" id="wGo-Q4-9lv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="YoX-Xw-lvU" id="NG2-Jc-eGb"/>
+                        <outlet property="debugPanelHeight" destination="yvg-YL-kk2" id="dF2-m1-4gM"/>
                         <outlet property="inputTextField" destination="dNO-sq-9ju" id="v2p-4e-dre"/>
                         <outlet property="outputTextView" destination="h1y-tG-cat" id="CNZ-qU-WxN"/>
+                        <outlet property="showPanelButton" destination="afI-pQ-KWH" id="XlN-pE-V70"/>
+                        <outlet property="tokenTextField" destination="hQY-4U-o2y" id="pzX-98-zBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
