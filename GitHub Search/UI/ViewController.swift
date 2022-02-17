@@ -44,6 +44,8 @@ class ViewController: UIViewController {
         self.showPanelButton.setTitle("Hide debug panel", for: .normal)
     }
     
+    
+    
     @IBAction func showDebugAction(_ sender: Any) {
         if self.outputTextView.isHidden {
             self.outputTextView.isHidden = false
@@ -64,8 +66,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
     
     @IBAction func makeRequestAction(_ sender: Any) {
         self.outputTextView.text = "Loading..."

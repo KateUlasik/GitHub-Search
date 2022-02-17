@@ -7,6 +7,12 @@
 
 import UIKit
 
+extension NSNotification.Name {
+    static let reloadRoot = NSNotification.Name("ThisIsNotificationName")
+    static let loadContentViewController = NSNotification.Name("ThisIsNContentViewController")
+}
+
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
