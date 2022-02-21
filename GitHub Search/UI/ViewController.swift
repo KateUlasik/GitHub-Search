@@ -8,18 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private static let TOKEN_ID = "saved_git_token"
+    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputTextView: UITextView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var debugPanelHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var showPanelButton: UIButton!
-    
     @IBOutlet weak var tokenTextField: UITextField!
     
     private var items: [GitResponseItems] = []
+    private var token: String?
+    private let storageService = StorageService()
+
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,9 @@ class ViewController: UIViewController {
         collectionView.register(UINib(nibName: "GitItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GitItemCollectionViewCell")
         
         self.showPanelButton.setTitle("Hide debug panel", for: .normal)
+        
+        self.token = storageService.getToken()
+        self.tokenTextField.text = self.token
     }
     
     
@@ -70,8 +74,14 @@ class ViewController: UIViewController {
     @IBAction func makeRequestAction(_ sender: Any) {
         self.outputTextView.text = "Loading..."
         
+        if token == nil {
+            showTokenViewController()
+        } else {
         if let searchText = inputTextField.text, searchText.isEmpty == false {
             makeRequest(searchText: searchText) { (rawtext, response) in
+                if response == nil {
+                    self.showTokenViewController()
+                } else {
                 self.outputTextView.text = rawtext
                 self.items = (response?.items ?? [])
                 
@@ -79,11 +89,36 @@ class ViewController: UIViewController {
                     self.collectionView.reloadData()
                 }
                 }
+            }
             } else {
             outputTextView.text = "Error: Search text is nil..."
         }
     }
    
+    }
+//   MARK: - Private section
+    
+    private func showTokenViewController() {
+        let vc = TokenViewController(nibName: "TokenViewController", bundle: nil)
+           
+           vc.fireAfterClose = {
+            self.token = self.storageService.getToken()
+            self.tokenTextField.text = self.token
+
+           }
+               
+           self.present(vc, animated: true, completion: nil)
+    }
+    
+    private func loadToken() -> String? {
+        guard let token = UserDefaults.standard.value(forKey: Self.TOKEN_ID) as? String else { return nil }
+        return token
+    }
+    
+    private func saveToken(token: String?) {
+        UserDefaults.standard.set(token, forKey: Self.TOKEN_ID)
+    }
+    
     private func makeRequest(searchText: String, completion: @escaping (_ rawText: String?, _ response: GitResponse?) -> ()) {
         let url = URL(string: "https://api.github.com/search/code?q='\(searchText)'")!
         

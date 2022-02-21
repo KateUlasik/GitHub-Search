@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		605D3CA127B3100E00AAE3A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605D3C9F27B3100E00AAE3A1 /* LaunchScreen.storyboard */; };
 		607DDB1127BC3E5E004E274A /* GitItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607DDB0F27BC3E5E004E274A /* GitItemCollectionViewCell.swift */; };
 		607DDB1227BC3E5E004E274A /* GitItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607DDB1027BC3E5E004E274A /* GitItemCollectionViewCell.xib */; };
+		609E893A27C2664900E903EB /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E893827C2664900E903EB /* TokenViewController.swift */; };
+		609E893B27C2664900E903EB /* TokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 609E893927C2664900E903EB /* TokenViewController.xib */; };
+		609E894127C2EDE300E903EB /* Endpoints in Frameworks */ = {isa = PBXBuildFile; productRef = 609E894027C2EDE300E903EB /* Endpoints */; };
+		609E894527C2F33100E903EB /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E894427C2F33100E903EB /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,9 @@
 		605D3CA227B3100E00AAE3A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607DDB0F27BC3E5E004E274A /* GitItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		607DDB1027BC3E5E004E274A /* GitItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		609E893827C2664900E903EB /* TokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewController.swift; sourceTree = "<group>"; };
+		609E893927C2664900E903EB /* TokenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokenViewController.xib; sourceTree = "<group>"; };
+		609E894427C2F33100E903EB /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609E894127C2EDE300E903EB /* Endpoints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +78,7 @@
 		605D3C9327B3100D00AAE3A1 /* GitHub Search */ = {
 			isa = PBXGroup;
 			children = (
+				609E893E27C2ED9D00E903EB /* Services */,
 				607DDB0E27BC3E0C004E274A /* UI */,
 				601E37D027B5261C006D67A1 /* Model */,
 				605D3C9427B3100D00AAE3A1 /* AppDelegate.swift */,
@@ -84,12 +93,30 @@
 		607DDB0E27BC3E0C004E274A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				609E893727C2661900E903EB /* TokenViewController */,
 				605D3C9827B3100D00AAE3A1 /* ViewController.swift */,
 				605D3C9A27B3100D00AAE3A1 /* Main.storyboard */,
 				607DDB0F27BC3E5E004E274A /* GitItemCollectionViewCell.swift */,
 				607DDB1027BC3E5E004E274A /* GitItemCollectionViewCell.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		609E893727C2661900E903EB /* TokenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				609E893827C2664900E903EB /* TokenViewController.swift */,
+				609E893927C2664900E903EB /* TokenViewController.xib */,
+			);
+			path = TokenViewController;
+			sourceTree = "<group>";
+		};
+		609E893E27C2ED9D00E903EB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				609E894427C2F33100E903EB /* StorageService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +135,9 @@
 			dependencies = (
 			);
 			name = "GitHub Search";
+			packageProductDependencies = (
+				609E894027C2EDE300E903EB /* Endpoints */,
+			);
 			productName = "GitHub Search";
 			productReference = 605D3C9127B3100D00AAE3A1 /* GitHub Search.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 605D3C8827B3100D00AAE3A1;
+			packageReferences = (
+				609E893F27C2EDE300E903EB /* XCRemoteSwiftPackageReference "Endpoints" */,
+			);
 			productRefGroup = 605D3C9227B3100D00AAE3A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609E893B27C2664900E903EB /* TokenViewController.xib in Resources */,
 				607DDB1227BC3E5E004E274A /* GitItemCollectionViewCell.xib in Resources */,
 				605D3CA127B3100E00AAE3A1 /* LaunchScreen.storyboard in Resources */,
 				605D3C9E27B3100E00AAE3A1 /* Assets.xcassets in Resources */,
@@ -163,11 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609E893A27C2664900E903EB /* TokenViewController.swift in Sources */,
 				605D3C9927B3100D00AAE3A1 /* ViewController.swift in Sources */,
 				605D3C9527B3100D00AAE3A1 /* AppDelegate.swift in Sources */,
 				607DDB1127BC3E5E004E274A /* GitItemCollectionViewCell.swift in Sources */,
 				605D3C9727B3100D00AAE3A1 /* SceneDelegate.swift in Sources */,
 				601E37D227B52639006D67A1 /* GitResponse.swift in Sources */,
+				609E894527C2F33100E903EB /* StorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		609E893F27C2EDE300E903EB /* XCRemoteSwiftPackageReference "Endpoints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tailoredmedia/Endpoints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		609E894027C2EDE300E903EB /* Endpoints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 609E893F27C2EDE300E903EB /* XCRemoteSwiftPackageReference "Endpoints" */;
+			productName = Endpoints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 605D3C8927B3100D00AAE3A1 /* Project object */;
 }
