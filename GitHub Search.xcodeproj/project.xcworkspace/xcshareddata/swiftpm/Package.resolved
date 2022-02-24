@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Endpoints",
+        "repositoryURL": "https://github.com/tailoredmedia/Endpoints.git",
+        "state": {
+          "branch": null,
+          "revision": "6e50dd911495504c806ec2eecda258d5d3befc02",
+          "version": "2.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
