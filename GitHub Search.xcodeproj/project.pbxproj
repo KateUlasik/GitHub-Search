@@ -20,6 +20,7 @@
 		609E893B27C2664900E903EB /* TokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 609E893927C2664900E903EB /* TokenViewController.xib */; };
 		609E894127C2EDE300E903EB /* Endpoints in Frameworks */ = {isa = PBXBuildFile; productRef = 609E894027C2EDE300E903EB /* Endpoints */; };
 		609E894527C2F33100E903EB /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E894427C2F33100E903EB /* StorageService.swift */; };
+		609E894827C5962B00E903EB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E894727C5962B00E903EB /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		609E893827C2664900E903EB /* TokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewController.swift; sourceTree = "<group>"; };
 		609E893927C2664900E903EB /* TokenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokenViewController.xib; sourceTree = "<group>"; };
 		609E894427C2F33100E903EB /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		609E894727C5962B00E903EB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				609E894427C2F33100E903EB /* StorageService.swift */,
+				609E894727C5962B00E903EB /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				609E893A27C2664900E903EB /* TokenViewController.swift in Sources */,
 				605D3C9927B3100D00AAE3A1 /* ViewController.swift in Sources */,
+				609E894827C5962B00E903EB /* NetworkService.swift in Sources */,
 				605D3C9527B3100D00AAE3A1 /* AppDelegate.swift in Sources */,
 				607DDB1127BC3E5E004E274A /* GitItemCollectionViewCell.swift in Sources */,
 				605D3C9727B3100D00AAE3A1 /* SceneDelegate.swift in Sources */,
