@@ -97,9 +97,26 @@ class ViewController: UIViewController {
             showTokenViewController()
         } else {
         if let searchText = inputTextField.text, searchText.isEmpty == false {
-            let token = self.tokenTextField.text ?? ""
-            let header = ["Authorization" : "token \(token)"]
-            self.networkService.getSearch(searchText: searchText, header: header)
+            self.networkService.getSearch(
+                searchText: searchText,
+                storageService: self.storageService) { response in
+                    if let response = response {
+                        self.items = (response.items)
+                        self.collectionView.reloadData()
+                        
+                        self.outputTextView.text = response.items.debugDescription
+                    } else {
+                        self.outputTextView.text = "Some error..."
+                    }
+                }
+                
+                //
+//            let token = self.tokenTextField.text ?? ""
+//            let header = ["Authorization" : "token \(token)"]
+//
+//            self.networkService.getSearch(searchText: searchText, storageService: self.storageService)
+            
+            
 //            makeRequest(searchText: searchText) { (rawtext, response) in
 //                if response == nil {
 //                    self.showTokenViewController()
@@ -111,7 +128,7 @@ class ViewController: UIViewController {
 //                    self.collectionView.reloadData()
 //                }
 //                }
-//            }
+            
             } else {
             outputTextView.text = "Error: Search text is nil..."
         }
